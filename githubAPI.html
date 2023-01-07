@@ -35,6 +35,22 @@
         .catch(function (error) {
           console.warn(error);
         });
+
+      // Render the data in the UI
+      function render(data) {
+        github.innerHTML = `<div>
+                    <div>
+                        <p><img alt="profile image" src="${data.avatar_url}"></p>
+                    </div>
+                    <div>
+                        <p>
+                            ${data.name}
+                            ${data.location}
+                            <a href="${data.url}">${data.public_repos} public repos</a>
+                        </p>
+                    </div>
+                </div>`;
+      }
     </script>
   </body>
 </html>

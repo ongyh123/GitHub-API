@@ -42,6 +42,9 @@
 
       // Render the data in the UI
       function render(data) {
+        // Get variables from the data
+        let [profile, repos] = data;
+        
         github.innerHTML = `<div>
                     <div>
                         <p><img alt="profile image" src="${data.avatar_url}"></p>

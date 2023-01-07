@@ -44,7 +44,15 @@
       function render(data) {
         // Get variables from the data
         let [profile, repos] = data;
-        
+
+        // Sort the repos by stars
+        repos.sort(function (repo1, repo2) {
+          if (repo1.stargazers_count > repo2.stargazers_count) {
+            return -1;
+          }
+          return 1;
+        });
+
         github.innerHTML = `<div>
                     <div>
                         <p><img alt="profile image" src="${data.avatar_url}"></p>

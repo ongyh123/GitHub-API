@@ -53,6 +53,9 @@
           return 1;
         });
 
+        // Only display 5 most starred repositories
+        repos = repos.slice(0, 5);
+
         github.innerHTML = `<div>
                     <div>
                         <p><img alt="profile image" src="${data.avatar_url}"></p>

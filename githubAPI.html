@@ -58,14 +58,19 @@
 
         github.innerHTML = `<div>
                     <div>
-                        <p><img alt="profile image" src="${data.avatar_url}"></p>
+                        <p><img alt="profile image" src="${profile.avatar_url}"></p>
                     </div>
                     <div>
                         <p>
-                            ${data.name}
-                            ${data.location}
-                            <a href="${data.url}">${data.public_repos} public repos</a>
+                            ${profile.name}
+                            ${profile.location}
+                            <a href="${profile.url}">${profile.public_repos} public repos</a>
                         </p>
+                        <ul>
+								${repos.map(function (repo) {
+									return `<li><a href="${repo.html_url}">${repo.name}</a> - ${repo.stargazers_count} Stars</li>`;
+								}).join('')}
+							</ul>
                     </div>
                 </div>`;
       }
